@@ -29,8 +29,30 @@ void factorial() {
 	}
 }
 void arithmetic() {
+	int start;
+	int add;
+	int x;
+	int startPlus;
 	cout << "Arithmetic Series:" << endl;
 	cout << "Enter a number to start at: ";
+	cin >> start;
+	cout << "Enter a number to add each time: ";
+	cin >> add;
+	cout << "Enter the number of elements in the series: ";
+	cin >> x;
+	cout << start << " + ";
+	int solution = start;
+	for (int i = 0; i <= x-2; i++) {
+		startPlus = start + add;
+		start = startPlus;
+		solution = solution + startPlus;
+		cout << startPlus << " ";
+		if (i < x - 2)
+			cout << "+ ";
+		else {
+			cout << "= " << solution << endl;
+		}
+	}
 }
 void geometric() {
 	int x;
