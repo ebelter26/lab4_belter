@@ -9,12 +9,13 @@ void printMenu() {
 	cout << "\t4. Exit" << endl;
 	cout << "Your Selection: ";
 }
+//evalutes factorial equation based on user input
 void factorial() {
 	int x, factorial = 1, number;
 	cout << "Enter a number: ";
 	cin >> number;
 	if (number < 1)
-		cout << "Not a positive number, try again." << endl;
+		cout << "Nice try, please enter a positive number" << endl;
 	else {
 		cout << number << "! = ";
 	}
@@ -28,6 +29,7 @@ void factorial() {
 		}
 	}
 }
+//evalutated arthimetic equation based on user input
 void arithmetic() {
 	int start;
 	int add;
@@ -40,8 +42,12 @@ void arithmetic() {
 	cin >> add;
 	cout << "Enter the number of elements in the series: ";
 	cin >> x;
+	if (x < 1) {
+		cout << "Nice try, please enter a positive number" << endl;
+	}
 	cout << start << " + ";
 	int solution = start;
+	//loop to find sum of starting value plus starting value plus variable add
 	for (int i = 0; i <= x-2; i++) {
 		startPlus = start + add;
 		start = startPlus;
@@ -50,13 +56,41 @@ void arithmetic() {
 		if (i < x - 2)
 			cout << "+ ";
 		else {
-			cout << "= " << solution << endl;
+			cout << " = " << solution << endl;
 		}
 	}
 }
+//evaluted geometric equation based on user input
 void geometric() {
-	int x;
+	int x; //starting value
+	int a; //number to multiply by each time
+	int s; //numner of elements in the series
+	int n = 1;
+	int xPlus;
+	cout << "Arithmetic Series:" << endl;
+	cout << "Enter a number to start at: ";
 	cin >> x;
+	int solution = x;
+	cout << "Enter a number to multiply by each time: ";
+	cin >> a;
+	cout << "Enter the number of elements in the series: ";
+	cin >> s;
+	if (s < 1) {
+		cout << "Nice try, please enter a positive number" << endl;
+	}
+	cout << x << " + ";
+	//loop to add each element to solution
+	for (int i = 1; i <= s-1;i++) {
+		xPlus = x * pow(a, i);
+		cout << xPlus;
+		solution = solution + xPlus;
+		if (i != s - 1) {
+			cout << " + ";
+		}
+		else {
+			cout << " = "<< solution <<endl;
+		}
+	}
 }
 int main() {
 	int choice;
